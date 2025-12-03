@@ -47,7 +47,7 @@ html {
  * Line-height 1.6 is optimal for body text readability (1.5-1.7 range).
  */
 body {
-	font-family: var(--font-family-base);
+	font-family: var(--font-sans);
 	font-size: var(--text-base);  /* Uses our fluid typography variable */
 	line-height: var(--line-height-base);
 	color: var(--color-text);
