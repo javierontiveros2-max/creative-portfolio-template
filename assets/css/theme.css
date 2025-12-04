@@ -52,69 +52,17 @@
 	/* ===== TYPOGRAPHY ===== */
 	--font-sans: 'Noto+Sans', sans-serif;
 	--font-serif: 'Roboto', serif;
-    --font-mono: 'Embed code' , monospace
-	/* ===== COLOR DEFINITIONS FOR TAILWIND ===== */
-	/*
-    For header and footer text/icons, use:
-    color: var(--color-primary-foreground);
-    This ensures maximum contrast on their dark backgrounds in both light and dark mode.
-  */
-	--color-background: #f9fafb;
-	--color-foreground: #1e293b;
-	--color-card: #ffffff;
-	--color-card-foreground: #1e293b;
-	--color-popover: #f1f5f9;
-	--color-popover-foreground: #1e293b;
-	--color-primary: #2563eb;
-	--color-primary-foreground: #ffffff;
-	--color-secondary: #64748b;
-	--color-secondary-foreground: #ffffff;
-	--color-accent: #f59e42;
-	--color-accent-foreground: #1e293b;
-	--color-muted: #f1f5f9;
-	--color-muted-foreground: #e5e7eb;
-	--color-border: #e5e7eb;
-	--color-input: #e5e7eb;
-	--color-ring: #2563eb;
-	--color-destructive: #ef4444;
-	--color-destructive-foreground: #ffffff;
-	--color-muted-foreground-rgb: 51, 65, 85; /* for rgba() usage in menu items, matches --color-muted-foreground */
+    --font-mono: 'Embed code' , monospace;
 
-	/*
-	 * ANIMATION TOKENS
-	 *
-	 * Centralizing animation values ensures consistency and makes
-	 * global timing adjustments trivial.
-	 *
-	 * The custom easing curve creates a "gentle landing" effect:
-	 * - Fast start (0.22, 1)
-	 * - Smooth deceleration (0.36, 1)
-	 */
-	--ease-out: cubic-bezier(0.22, 1, 0.36, 1);  /* "Power2.out" equivalent */
-	--duration-normal: 0.6s;  
-}
+	/* Colores tipo*/
+	--bs-body-bg: #0f0f0f;
+	--bs-body-color: #f5f5f5;
+	--bs-primary: #6366f1;
+	--bs-primary-rgb: 99, 102, 241;
 
-:root.dark {
-	--color-background: #0f172a; /* dark neutral background */
-	--color-foreground: #f8fafc; /* use light palette foreground for contrast */
-	--color-card: #1e293b;
-	--color-card-foreground: #f8fafc;
-	--color-popover: #1e293b;
-	--color-popover-foreground: #f8fafc;
-	--color-primary: #60a5fa; /* blue-400 */
-	--color-primary-foreground: #0f172a;
-	--color-secondary: #334155; /* slate-700 */
-	--color-secondary-foreground: #f8fafc;
-	--color-muted: #1e293b;
-	--color-muted-foreground: #94a3b8;
-	--color-accent: #fbbf24; /* yellow-400 */
-	--color-accent-foreground: #0f172a;
-	--color-destructive: #f87171; /* red-400 */
-	--color-destructive-foreground: #0f172a;
-	--color-border: #334155;
-	--color-input: #334155;
-	--color-ring: #60a5fa;
-	--color-muted-foreground-rgb: 148, 163, 184; /* for rgba() usage in menu items, matches --color-muted-foreground */
-                    /* Default animation duration */
+	/* Custom tokens */
+	--color-bg-alt: #1a1a1a;
+	--color-muted: #6c757d;
+	--ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
