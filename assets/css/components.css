@@ -321,3 +321,62 @@
    - Ajusta `box-shadow` y `filter: blur()` para hacer el efecto más sutil o más dramático.
    - Modifica `transition` y `transform` para cambiar la velocidad y la distancia del movimiento.
 */
+
+/* --------------------------------------------------------------------------
+   10. Double underline hover effect for section headings
+   -------------------------------------------------------------------------- */
+/* Qué hace: crea dos líneas (arriba y abajo) que aparecen al hacer hover.
+   Cómo funciona: usa pseudo-elementos ::before (línea superior) y ::after
+   (línea inferior). Ambos tienen un gradiente de fondo y se escalan en X
+   de 0 a 1 al pasar el cursor, generando el efecto de 'crecer' desde un
+   extremo.
+   Selectores aplicados: `h2.display-5.gsap-reveal` que coincide con los
+   títulos "About Me", "Featured Projects" y "Let's Work Together".
+*/
+.double-underline,
+h2.display-5.gsap-reveal {
+	/* Necesario para posicionar los pseudoelementos respecto al texto */
+	position: relative;
+	display: inline-block; /* hace que el ancho coincida con el texto */
+	padding: 0 0.12em; /* pequeño espacio lateral para que las líneas no toquen */
+}
+
+h2.display-5.gsap-reveal::before,
+h2.display-5.gsap-reveal::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 0.08em; /* grosor de la línea (más fino) */
+	border-radius: 2px;
+	pointer-events: none;
+	/* degradado aplicado a las líneas */
+	background: linear-gradient(90deg, var(--bs-primary), #ec4899);
+	/* Empiezan colapsadas en X */
+	transform: scaleX(0);
+	transform-origin: left; /* origen de la animación */
+	transition: transform 420ms cubic-bezier(.2,.9,.2,1);
+	opacity: 0.95;
+}
+
+/* Línea superior */
+h2.display-5.gsap-reveal::before {
+	top: -0.42em; /* sitúa la línea encima del texto */
+}
+
+/* Línea inferior: crece desde la derecha para variar el efecto */
+h2.display-5.gsap-reveal::after {
+	bottom: -0.28em; /* sitúa la línea debajo del texto */
+	transform-origin: right;
+}
+
+/* Hover: expandir ambas líneas de 0 a 100% */
+h2.display-5.gsap-reveal:hover::before,
+h2.display-5.gsap-reveal:hover::after,
+.double-underline:hover::before,
+.double-underline:hover::after {
+	transform: scaleX(1);
+}
+
+/* Nota: si quieres aplicar este efecto a otros elementos, añade la clase
+   `double-underline` al elemento en el HTML. */
