@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>404 - Page Not Found</title>
+
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+	<!-- Custom Styles -->
+	<link rel="stylesheet" href="./assets/css/index.css" />
+
+	<!-- Font Awesome Icons -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+	<!-- Custom Scripts -->
+	<script src="./assets/js/main.js" defer></script>
+
+	<style>
+		/* 404 Page Specific Styles */
+		.page-404 {
+			background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.page-404::before {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="15" fill="%23ec4899" opacity="0.1"/><circle cx="80" cy="80" r="20" fill="%2314b8a6" opacity="0.1"/><circle cx="80" cy="20" r="10" fill="%233b82f6" opacity="0.1"/></svg>');
+			z-index: 0;
+		}
+
+		.error-container {
+			position: relative;
+			z-index: 1;
+			text-align: center;
+		}
+
+		.error-404-text {
+			font-size: 15vw;
+			font-weight: 900;
+			line-height: 1;
+			margin: 0;
+			padding: 0;
+			background: linear-gradient(135deg, #3b82f6 0%, #ec4899 50%, #14b8a6 100%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			animation: shimmer 3s infinite;
+			letter-spacing: -0.02em;
+		}
+
+		@keyframes shimmer {
+			0%, 100% {
+				filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.3));
+			}
+			50% {
+				filter: drop-shadow(0 0 40px rgba(236, 72, 153, 0.5));
+			}
+		}
+
+		.error-message {
+			font-size: 1.5rem;
+			color: rgba(255, 255, 255, 0.8);
+			margin-top: 1.5rem;
+			margin-bottom: 2rem;
+		}
+
+		.error-description {
+			font-size: 1rem;
+			color: rgba(255, 255, 255, 0.6);
+			margin-bottom: 3rem;
+			max-width: 500px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.holo-card-404 {
+			position: relative;
+			background: rgba(255, 255, 255, 0.05);
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			border-radius: 20px;
+			padding: 3rem;
+			backdrop-filter: blur(10px);
+			box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+			animation: float 3s ease-in-out infinite;
+		}
+
+		@keyframes float {
+			0%, 100% {
+				transform: translateY(0px);
+			}
+			50% {
+				transform: translateY(-20px);
+			}
+		}
+
+		.btn-404 {
+			display: inline-block;
+			padding: 12px 40px;
+			margin: 0 10px;
+			border: 2px solid rgba(255, 255, 255, 0.3);
+			border-radius: 50px;
+			color: #fff;
+			text-decoration: none;
+			transition: all 0.3s ease;
+			font-weight: 600;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.btn-404::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: -100%;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(135deg, #3b82f6 0%, #ec4899 50%, #14b8a6 100%);
+			transition: left 0.3s ease;
+			z-index: -1;
+		}
+
+		.btn-404:hover::before {
+			left: 0;
+		}
+
+		.btn-404:hover {
+			color: #fff;
+			border-color: rgba(255, 255, 255, 0.6);
+			transform: translateY(-3px);
+			box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+		}
+
+		.btn-primary-404 {
+			background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+			border: none;
+		}
+
+		.btn-primary-404:hover {
+			background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+		}
+
+		/* Floating shapes for 404 */
+		.floating-shapes-404 {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			z-index: 0;
+		}
+
+		.shape-404 {
+			position: absolute;
+			border-radius: 50%;
+			filter: blur(60px);
+			opacity: 0.3;
+			animation: float-shape 6s ease-in-out infinite;
+		}
+
+		.shape-404-1 {
+			width: 400px;
+			height: 400px;
+			background: #3b82f6;
+			top: -100px;
+			left: -100px;
+		}
+
+		.shape-404-2 {
+			width: 300px;
+			height: 300px;
+			background: #ec4899;
+			bottom: -50px;
+			right: -50px;
+			animation-delay: 2s;
+		}
+
+		.shape-404-3 {
+			width: 250px;
+			height: 250px;
+			background: #14b8a6;
+			top: 50%;
+			right: -100px;
+			animation-delay: 4s;
+		}
+
+		@keyframes float-shape {
+			0%, 100% {
+				transform: translate(0, 0);
+			}
+			25% {
+				transform: translate(30px, -30px);
+			}
+			50% {
+				transform: translate(0, 0);
+			}
+			75% {
+				transform: translate(-30px, 30px);
+			}
+		}
+	</style>
+</head>
+<body>
+	<section class="page-404">
+		<!-- Floating shapes -->
+		<div class="floating-shapes-404">
+			<div class="shape-404 shape-404-1"></div>
+			<div class="shape-404 shape-404-2"></div>
+			<div class="shape-404 shape-404-3"></div>
+		</div>
+
+		<div class="error-container">
+			<div class="holo-card-404">
+				<h1 class="error-404-text">404</h1>
+				<h2 class="error-message">Oops! Page Not Found</h2>
+				<p class="error-description">
+					Lo siento, la página que estás buscando no existe. Quizás se ha movido o fue eliminada.
+				</p>
+				<div>
+					<a href="./" class="btn-404 btn-primary-404">Back to Home</a>
+					<a href="./index.html#contact" class="btn-404">Contact Me</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Bootstrap JS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

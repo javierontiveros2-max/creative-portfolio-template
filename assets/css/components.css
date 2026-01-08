@@ -49,6 +49,94 @@
     left: 30%;
 }
 
+/* --------------------------------------------------------------------------
+   Social Media Icons with Hover Effects
+   -------------------------------------------------------------------------- */
+/* Container para los iconos de redes sociales - Centra y distribuye los iconos horizontalmente */
+.social-media-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  margin: 20px 0 0 0;
+  list-style: none;
+}
+
+/* Elemento de lista - Elimina el estilo de lista predeterminado */
+.social-media-icons li {
+  list-style: none;
+}
+
+/* Enlaces de iconos - Crear circulos de 80x80px con borde blanco */
+.social-media-icons li a {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 80px;
+  font-size: 35px;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #fff;
+  z-index: 1;
+  transition: .5s;
+}
+
+/* Icono - Estilo del icono dentro del circulo */
+.social-media-icons li a .icon {
+  position: relative;
+  color: #262626;
+  transition: .5s;
+  z-index: 3;
+}
+
+/* Efecto hover del icono - Cambia color a blanco y gira 360° en el eje Y */
+.social-media-icons li a:hover .icon {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+/* Pseudo-elemento :before - Crea la barra de fondo que se desliza hacia arriba */
+.social-media-icons li a:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f00;
+  transition: .5s;
+  z-index: 2;
+}
+
+/* Animacion hover del fondo - Desliza el fondo de abajo hacia arriba */
+.social-media-icons li a:hover:before {
+  top: 0;
+}
+
+/* Color de fondo especifico para cada red social al pasar el cursor */
+/* Facebook - Azul de Facebook */
+.social-media-icons li:nth-child(1) a:before {
+  background: #3b5999;
+}
+
+/* Twitter - Azul de Twitter */
+.social-media-icons li:nth-child(2) a:before {
+  background: #55acee;
+}
+
+/* LinkedIn - Azul de LinkedIn */
+.social-media-icons li:nth-child(3) a:before {
+  background: #0077b5;
+}
+
+/* Google Plus - Rojo de Google Plus */
+.social-media-icons li:nth-child(4) a:before {
+  background: #dd4b39;
+}
+
 .hero-title {
     letter-spacing: -0.03em;
 }
