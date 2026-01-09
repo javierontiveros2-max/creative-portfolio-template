@@ -62,5 +62,5 @@ Este README amplía la información del proyecto explicando qué se hizo en los 
 
 ## Notas sobre la "holographic card"
 - Intenté crear una tarjeta con efecto holográfico (degradados iridiscentes, brillo y sutiles animaciones 3D). Implementé la estructura HTML y varias reglas CSS (gradientes múltiples, mezcla de modos de fusión, filtros y transformaciones).
-- Tuve dificultades para que el efecto fuese consistente entre navegadores y dispositivos; en particular, la combinación de `mix-blend-mode`, `backdrop-filter` y animaciones 3D no se comportó igual en todos los entornos. Por eso dejé una versión funcional pero simplificada para garantizar compatibilidad.
-- Si quieres, puedo continuar iterando en la tarjeta holográfica usando soluciones progresivas (una versión CSS pura para navegadores modernos y una alternativa degradada para navegadores con menos soporte), o bien implementar la versión avanzada usando un pequeño canvas/WebGL si te interesa un resultado más fiel.
+- Tuve dificultades para que el efecto fuese consistente entre navegadores y dispositivos; en particular, la combinación de `mix-blend-mode`, `backdrop-filter` y animaciones 3D no se comportó igual en todos los entornos. Por eso dejé una versión funcional pero simplificada para garantizar compatibilidad. Pero en general estoy orgulloso del resultado
+
